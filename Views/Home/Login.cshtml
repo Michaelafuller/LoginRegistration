@@ -1,0 +1,23 @@
+@model LoginUser
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="d-flex justify-content-between">
+    <h1 class="display-4">Login to this Cool Site!</h1>
+    <a href="/register">Register</a>
+</div>
+
+<form asp-controller = "Home" asp-action="Login" method="post">
+
+    <label asp-for="LoginEmail"></label>
+    <span asp-validation-for="LoginEmail"></span>
+    <input class="form-control mb-3" asp-for="LoginEmail">
+
+    <label asp-for="Password"></label>
+    <span asp-validation-for="Password"></span>
+    <input class="form-control mb-3" asp-for="Password">
+
+    <button class="btn btn-success">Login</button>
+
+</form>
